@@ -1,6 +1,9 @@
 ---
 import { getLaunchBy } from "../../services/spacex";
 import Layout from "../../layouts/Layout.astro";
+import { videos } from "../../type/videos.json";
+
+const videosprop = videos;
 
 export const prerender = false;
 
@@ -15,7 +18,7 @@ if (id) {
 
 <Layout title=`Lanzamiento ${id}`>
   <article
-    class="rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:border-gray-500 transition flex flex-col text-center"
+    class="rounded-lg border shadow-md bg-gray-800 border-gray-700 transition flex flex-col text-center"
   >
     <picture class="flex justify-center p-4">
       <img
@@ -28,5 +31,23 @@ if (id) {
       Launch #{launch?.flight_number}
     </h2>
     <p class="mb-4 font-light text-gray-400">{launch?.details}</p>
+    <p class="mb-4 font-light text-gray-400">
+      <a
+        href={launch?.links.webcast}
+        target="_blank"
+        class="flex flex-col m-auto text-center w-1/4 h-auto border hover:border-gray-500 border-gray-700 rounded-lg p-2 bg-gray-950 hover:bg-red-500 hover:text-gray-950"
+      >
+        <picture class="flex justify-center">
+          <img
+            class="rounded-lg w-14 h-auto"
+            src={launch?.links?.patch.small}
+            alt={launch?.name}
+          />
+        </picture>
+        Ver Lanzamiendo en <strong
+          class="text-red-800 bg-white rounded-full font-bold">YouTube</strong
+        ></a
+      >
+    </p>
   </article>
 </Layout>

@@ -29,3 +29,4 @@ export const getLatestLaunches = async () => {
   const {docs: launches} = (await res.json()) as APISpaceXResponse
   return launches
 }
+

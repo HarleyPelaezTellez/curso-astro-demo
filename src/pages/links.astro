@@ -1,0 +1,36 @@
+---
+import { getLatestLaunches } from "../services/spacex";
+import { videos } from "../type/videos.json";
+
+const linksvideos = await getLatestLaunches();
+
+const videosprop = videos;
+---
+
+<!-- {
+  linksvideos.map(({ links, id }) => (
+    <div class="mb-4">
+      <p>{id}</p>
+      <p>{links.webcast}</p>
+    </div>
+  ))
+} -->{
+  videosprop.map(({ idLaunch, url }) => (
+    <>
+      <div class="mb-4">
+        <p>{idLaunch}</p>
+        <p>{url}</p>
+      </div>
+      <iframe
+        width="560"
+        height="315"
+        src={url}
+        title="YouTub"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      />
+    </>
+  ))
+}
