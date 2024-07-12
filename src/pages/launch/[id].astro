@@ -35,19 +35,20 @@ if (id) {
       <a
         href={launch?.links.webcast}
         target="_blank"
-        class="flex flex-col m-auto text-center w-1/4 h-auto border hover:border-gray-500 border-gray-700 rounded-lg p-2 bg-gray-950 hover:bg-red-500 hover:text-gray-950"
+        class="flex m-auto text-center hover:border-gray-500 border-gray-700 rounded-lg p-2 hover:text-gray-950"
       >
-        <picture class="flex justify-center">
-          <img
-            class="rounded-lg w-14 h-auto"
-            src={launch?.links?.patch.small}
-            alt={launch?.name}
-          />
-        </picture>
-        Ver Lanzamiendo en <strong
-          class="text-red-800 bg-white rounded-full font-bold">YouTube</strong
-        ></a
-      >
+        <svg
+          class="hover:fill-red-500 fill-red-700 w-"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="width: 50px; height: auto; margin: auto;"
+          ><path
+            d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"
+          ></path></svg
+        >
+      </a>
     </p>
   </article>
 </Layout>
